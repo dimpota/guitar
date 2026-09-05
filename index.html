@@ -1,0 +1,61 @@
+<!DOCTYPE html> <html lang="el"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Guitar Manager</title> <style> /* ================================================== GENERAL PAGE ================================================== */ * { box-sizing: border-box; } body { margin: 0; font-family: Arial, sans-serif; overflow: hidden; } /* ================================================== MAIN APPLICATION ================================================== */ #app { display: flex; height: 100vh; width: 100%; } /* ================================================== PANELS ================================================== */ .panel { border-right: 1px solid #ccc; padding: 8px; overflow: hidden; } /* ================================================== PLAYLIST ================================================== */ .playlist { width: 25%; min-width: 220px; background: #f5f5f5; display: flex; flex-direction: column; } #playlist { margin: 0; padding-left: 22px; overflow-x: auto; overflow-y: auto; flex: 1; } #playlist li { font-size: 10px; line-height: 1.4; padding: 1px 5px; cursor: pointer; white-space: nowrap; } #playlist li:hover { background-color: #e0e0e0; } /* ================================================== VIEWER ================================================== */ .editor { width: 54%; display: flex; flex-direction: column; min-width: 0; } .editorHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; flex-shrink: 0; } .editorZoom { display: flex; gap: 4px; } .editorZoom button { width: 28px; height: 25px; padding: 0; font-size: 16px; cursor: pointer; } #songViewer { width: 100%; flex: 1; min-height: 0; margin: 0; padding: 8px; font-family: "Courier New", monospace; font-size: 16px; line-height: 1.25; white-space: pre; overflow-x: auto; overflow-y: auto; background: white; border: 1px solid #ccc; } /* ================================================== EXPLORER ================================================== */ .explorer { width: 21%; background: #f5f5f5; overflow: hidden; display: flex; flex-direction: column; } .explorerHeader { display: flex; gap: 4px; align-items: center; flex-shrink: 0; } .explorerCurrentFolder { font-size: 9px; color: #0066cc; margin: 2px 0 4px 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-shrink: 0; } .explorer ul { margin: 0; padding: 0; list-style: none; overflow-x: auto; overflow-y: auto; flex: 1; min-height: 0; } .explorer li { font-size: 11px; line-height: 1.35; padding: 2px 4px; cursor: pointer; white-space: nowrap; } .explorer li:hover { background-color: #e0e0e0; } /* ================================================== BUTTONS ================================================== */ button { cursor: pointer; } button:hover { background-color: #e8e8e8; } button:active { background-color: #d0d0d0; } /* ================================================== ANDROID ================================================== */ body.android { overflow: hidden; } body.android #app { display: grid; grid-template-columns: 40% 60%; grid-template-rows: 55% 45%; width: 100%; height: 100vh; overflow: hidden; } body.android .panel { width: 100%; min-width: 0; min-height: 0; border-right: none; border-bottom: 1px solid #ccc; padding: 6px; overflow: hidden; } /* ================================================== ANDROID PLAYLIST ================================================== */ body.android .playlist { grid-column: 1; grid-row: 1; height: 100%; display: flex; flex-direction: column; } body.android #playlist { margin: 0; padding-left: 20px; overflow-x: auto; overflow-y: auto; flex: 1; min-height: 0; } body.android #playlist li { font-size: 10px; line-height: 1.3; padding: 2px 5px; } /* ================================================== ANDROID VIEWER ================================================== */ body.android .editor { grid-column: 2; grid-row: 1 / 3; width: 100%; height: 100%; min-height: 0; display: flex; flex-direction: column; } body.android .editorHeader { margin-bottom: 5px; } body.android .editorZoom { gap: 5px; } body.android .editorZoom button { width: 36px; height: 30px; font-size: 18px; } body.android #songViewer { width: 100%; min-height: 0; flex: 1; padding: 7px; font-size: 14px; line-height: 1.3; white-space: pre; overflow-x: auto; overflow-y: auto; background: white; } body.android #wrapText { width: 42px; height: 30px; font-size: 9px; } /* ================================================== ANDROID EXPLORER ================================================== */ body.android .explorer { grid-column: 1; grid-row: 2; width: 100%; height: 100%; min-height: 0; display: flex; flex-direction: column; } body.android .explorerHeader { flex-shrink: 0; } body.android .explorer button { height: 32px; min-height: 32px; font-size: 13px; padding: 3px 12px; margin-bottom: 5px; flex-shrink: 0; } body.android .explorer ul { margin: 0; padding: 0; flex: 1; min-height: 0; overflow-x: auto; overflow-y: auto; } body.android .explorer li { font-size: 10px; line-height: 1.3; padding: 2px 5px; } body.android button { touch-action: manipulation; } /* ================================================== SMALL PHONES ================================================== */ @media (max-height: 650px) { body.android #app { grid-template-rows: 50% 50%; } body.android #songViewer { font-size: 13px; } } </style> </head> <body> <div id="app">
+<!-- PLAYLIST -->
+
+<div class="panel playlist">
+
+  <ul id="playlist"></ul>
+
+</div>
+
+
+<!-- VIEWER -->
+
+<div class="panel editor">
+
+  <div class="editorHeader">
+
+    <div class="editorZoom">
+
+      <button
+        id="zoomOut"
+        type="button"
+        title="Zoom Out"
+      >
+        −
+      </button>
+
+      <button
+        id="zoomIn"
+        type="button"
+        title="Zoom In"
+      >
+        +
+      </button>
+
+      <button
+        id="wrapText"
+        type="button"
+        title="Wrap Text"
+        aria-pressed="false"
+      >
+        WR
+      </button>
+
+    </div>
+
+  </div>
+
+  <pre id="songViewer"></pre>
+
+</div>
+
+
+<!-- EXPLORER -->
+
+<div class="panel explorer">
+
+  EXPLORER
+
+</div>
+
+</div> <script src="app.js"></script> </body> </html>
