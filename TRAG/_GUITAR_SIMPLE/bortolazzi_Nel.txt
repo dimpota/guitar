@@ -1,0 +1,63 @@
+
+
+
+TEMA arpegiato
+
+6/8
+
+GD GG
+GC DD
+GD7 GC
+GD7 GG }x
+
+EE AmAm
+D7D7 GG
+AA D.
+
+DG DD
+GD7 GC
+GD G. }x
+
+
+VAR I.  vals
+
+VAR II. arpeg
+
+VAR III. vals
+
+
+VAR IV.
+
+GmD GmGm
+GmCm GmD
+BbEb BbEb
+BbF Bb. }x
+
+
+GmCm DD
+D7D7 GmGm
+A7A9 D.
+
+
+CmGm D.
+GmD7 GmCm
+GmD Gm.
+
+
+
+VAR V 6/8
+
+GD7 GG
+GG D-
+
+GD GC
+GD G.}x
+
+EE Am-
+D7D7 G-
+A7A7 D-
+DG GD
+GD7 GC
+GD G.
+
+VAR VI. 6/8 vals
