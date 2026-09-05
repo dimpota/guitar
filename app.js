@@ -255,7 +255,7 @@ text =
 text.replace(/ /g, "_");
 
 text =
-text.replace(/./g, "_");
+text.replace(/\//g, "_");
 
 const charactersToRemove = [
 "\",
