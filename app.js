@@ -255,10 +255,10 @@ text =
 text.replace(/ /g, "_");
 
 text =
-text.replace(/\//g, "_");
+text.replace(/\./g, "_");
 
 const charactersToRemove = [
-"\",
+"\\",
 "(",
 ")",
 "-",
@@ -410,8 +410,8 @@ function buildSongUrl(relativePath) {
 
 const normalized =
 relativePath
-.replace(/\/g, "/")
-.replace(/^/+/, "");
+.replace(/\\/g, "/")
+.replace(/^\/+/, "");
 
 return (
 SONGS_BASE_DIR +
@@ -522,7 +522,7 @@ function getExplorerItems(directoryPath) {
 const prefix =
 directoryPath
 ? directoryPath.replace(
-//+$/,
+/\/+$/,
 ""
 ) + "/"
 : "";
